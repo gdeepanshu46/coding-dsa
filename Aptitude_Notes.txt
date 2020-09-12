@@ -1,0 +1,22 @@
+1. LCM and HCF
+
+a * b = LCM * HCF
+
+//for fractions
+LCM(a/b, c/d, e/f) = LCM(a, c, e) / HCF(b, d, f)
+
+HCF(a/b, c/d, e/f) = HCF(a, c, e) / LCM(b, d, f)
+
+----------------------------------------------------------------
+
+2. Ratio and Proportions
+
+a/b is ratio
+a/b = c/d is Proportion
+
+Properties :
+a/b = c/d if a*d = b*c
+a/b > c/d if a*d > b*c
+a/b < c/d if a*d < b*c
+	
+
