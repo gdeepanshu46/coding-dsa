@@ -88,51 +88,36 @@ void quickSort(int* arr, int n){
 	cout << endl;
 }
 
-void merge(int* arr, int start, int end, int mid){
+void merge(int* arr, int start, int mid, int end){
+
+	int resultant[end - start + 1];
+
+	int index = 0;
+
+	int i = start;
+	int j = mid + 1;
+
+	while(i <= mid  && j <= end){
+		if(arr[i] < arr[j]){
+			resultant[index++] = arr[i++];
+		}
+		else
+			resultant[index++] = arr[j++];
+	}
+
+	while(i <= mid){
+		resultant[index++] = arr[i++];
+	}
 	
-	vector<int> v1;
-	vector<int> v2;
 
-	for(int i=start; i<=mid; i++){
-		v1.push_back(arr[i]);
+	while(j <= end){
+		resultant[index++] = arr[j++];
 	}
 
-	for(int i=mid+1; i<=end; i++){
-		v2.push_back(arr[i]);
-	}
+	index = 0;
 
-	int n1 = v1.size();
-	int n2 = v2.size();
-
-	int i=0, j=0;
-
-	vector<int> res;
-
-	while(i<n1 && j<n2){
-		if(v1[i] < v2[j]){
-			res.push_back(v1[i]);
-			i++;
-		}
-		else{
-			res.push_back(v2[j]);
-			j++;
-		}
-	}
-
-	while(i<n1){
-		res.push_back(v1[i]);
-		i++;
-	}
-
-
-	while(j<n2){
-		res.push_back(v2[j]);
-		j++;
-	}
-
-	i = start;
-	for(auto x : res){
-		arr[i++] = x; 
+	for(int i=start; i<=end; i++){
+		arr[i] = resultant[index++];
 	}
 }
 
@@ -142,7 +127,7 @@ void mSort(int* arr, int start, int end){
 
 		mSort(arr, start, mid);
 		mSort(arr, mid+1, end);
-		merge(arr, start, end, mid);
+		merge(arr, start, mid, end);
 	}
 }
 
@@ -238,13 +223,13 @@ int main(){
 	// quickSort(arr2, 5);
 	// quickSort(arr3, 5);
 
-	// mergeSort(arr1, 5);
-	// mergeSort(arr2, 5);
-	// mergeSort(arr3, 5);
+	mergeSort(arr1, 5);
+	mergeSort(arr2, 5);
+	mergeSort(arr3, 5);
 
-	heapSort(arr1, 5);
-	heapSort(arr2, 5);
-	heapSort(arr3, 5);
+	// heapSort(arr1, 5);
+	// heapSort(arr2, 5);
+	// heapSort(arr3, 5);
 
 	// selectionSort();
 	// insertiionSort();
