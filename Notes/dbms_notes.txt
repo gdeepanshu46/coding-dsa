@@ -1,0 +1,35 @@
+Transaction :
+
+A transaction is a single logical unit of work which accesses and possibly modifies the contents of a database. Transactions access data using read and write operations.
+In order to maintain consistency in a database, before and after the transaction, certain properties are followed. These are called ACID properties.
+
+1. Atomicity : The entire transaction takes place or doesn't happens at all. Only two operations, either ABORT() OR COMMIT()
+
+2. Consistency : The database must be consistent before and after the transaction
+
+3. Isolation : Multiple transactions occur independently without interference
+
+4. Durability : The changes of a successful transaction occurs even if the system failure occurs
+
+-------------------------------------------------------------------------------------
+
+Transaction States :
+
+BEGIN -> ACTIVE -> PARTIALLY COMMITTED -> COMMITTED 
+  			|		|						  |
+  			V		V						  V
+   			----> FAILED -->  ABORT  --> TERMINATED
+
+------------------------------------------------------------------------------------
+
+SELECT name, goals 
+from Countries, Goals 
+where Countries.id = Goals.country_id
+order by goals desc, name;
+
+
+SELECT name, sum(goals)
+from Countries, Goals
+where Countries.id = Goals.country_id
+group by country_id
+order by sum(goals) desc, country_id;

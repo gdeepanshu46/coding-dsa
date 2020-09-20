@@ -79,7 +79,14 @@ Functions :
 
 1. SUBSTRING : 	Select SUBSTRING('SQL Tutorial', 1, 3) //returns 'SQL'
 2. RIGHT :  Select RIGHT('SQL TUTORIAL', 3) //returns rightmost 3 characters 'IAL'
+3. CONCAT : concats different strings, SELECT CONCAT('Hello', 'how', 'are', you);
 
+4. IF :  for condtional based printing, tell the type of triangle from table TRIANGLE
+
+# SELECT IF(1000 > 500, 'YES', 'NO');
+
+# SELECT IF(a + b > c and b + c > a and c + a > b, IF(a = b and b = c, 'Equilateral', IF(a = b or b = c or c = a, 'Isosceles', 'Scalene')), 'Not A Triangle')
+from triangles;
 
 
 

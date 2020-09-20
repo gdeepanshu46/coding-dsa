@@ -1,0 +1,11 @@
+----------------------------------------------------------------------------------------------
+
+# Multithreading 
+	It is a feature that allows concurrent execution of two or more parts of a program
+	for MAXIMUM utilization of CPU. Each part of the program is called a Thread
+	So Threads are light-weight processes within a process.
+
+# In simple terms - 
+	1. A program in execution is known as a Process
+	2. Divide the program in several small parts, each called a Thread
+	3. Parallel execution of such threads Maximize the CPU utilization

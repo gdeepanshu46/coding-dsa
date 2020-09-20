@@ -1,0 +1,43 @@
+-------------------------------------------------------------------------------------
+
+# Multithreading 
+	It is a feature that allows concurrent execution of two or more parts of a program
+	for MAXIMUM utilization of CPU. Each part of the program is called a Thread
+	So Threads are light-weight processes within a process.
+
+# In simple terms - 
+	1. A program in execution is known as a Process
+	2. Divide the program in several small parts, each called a Thread
+	3. Parallel execution of such threads Maximize the CPU utilization
+
+# In java, multithreading can be achieved in 2 ways -
+	1. Extending Thread class
+		class MultithreadingDemo extends Thread{
+			public void run() {...} //override run() method of Thread class
+		}
+
+		public class Multithread{
+			psvm(){
+				MultithreadingDemo obj = new MultithreadingDemo();
+				obj.start(); //running thread
+			}
+		}
+
+
+	2. Implementing Runnable interface
+		class MultithreadingDemo implements Runnable{
+			public void run(){...} //override run() method of Runnable
+		}
+
+		public class Multithread{
+			psvm(){
+
+				//instantiating a Thread class object
+				Thread obj = new Thread(new MultithreadingDemo());
+				obj.start(); //running thread
+			}
+		}
+# Thread Class VS Runnable Interface
+	-> If we extend Thread class, we cant extend other classes as Multiple inheritance is not allowed, so it is better to implement the Runnable interface
+	
+	-> We can achieve basic functionality of a thread by extending Thread class because it provides some inbuilt methods like yield(), interrupt() etc. that are not available in Runnable interface. 

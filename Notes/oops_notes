@@ -1,0 +1,91 @@
+-------------------------------------------------------------------------------------
+
+# INTRODUCTION
+
+1. OOPS is Object Oriented Programming Systems
+2. It is a paradigm or methodology to write programs using object and classes
+3. Technique of programming that focuses on Objects
+
+CLASS : acts as a blueprint from which Objects are created
+OBJECTS : instance of a Class, acts as its variable	
+
+-------------------------------------------------------------------------------------
+
+# Principles/Pillars of OOPS
+
+1. Encapsulation : Binding data and operations together, to make data safe from any modification. We achive both things - 
+
+	a. Info hiding (Access Control Modifiers)
+	b. Implementation hiding (through creation of interface of class)
+
+2. Abstraction -> Process of hiding the implementation details while showing the functionality
+			   -> It is like 'What the object does, not How it does'
+   Ex - Driving a car, knowledge of how accelarator works internally is abstract to user
+
+3. Inheritance : Reusability of code
+
+4. Polymorphism : One name, Many forms. There are 2 type of Poly..
+
+a. Compile time, also know as early binding or static binding, achived through
+	- Function Overloading : functn with same name capable of doing many things
+	- Operator Overloading  -> same operator is capable of doing many things
+							-> operator overloaded to give it user defined meaning
+
+b. Run time, also known as late binding or dynamic binding, achieved through
+	- Function Overriding -> Redefing a base class method in derived class
+	- Virtual functions
+
+
+-------------------------------------------------------------------------------------
+
+# Abstract Class : Sometimes Implementation of all functions cannot be provided in a base class because we don't know the implementation. Such a class is Abstract Class.
+
+ 	Ex - We know every animal moves but how, this is not known, So we can create an Abstract Class with an abstract method Move(), such that each and every animal that will inherit this class, and will define this method accordingly
+ 
+	-> A Class is Abstract if it has atleast one pure virtual function/abstract method
+	-> Abstract Classes cant be instantiated
+	-> Needs to be extended and methods implemented
+	-> We can have pointer and references of abstract class type
+	-> If we do not override the pure virtual functions in derived class, then it too becomes abstract class
+	-> An Abstract Class can have constructors, these classes cant be instantiated but they can be extended by child classes, so constructors can be evoked by their child objects not by them.
+
+-------------------------------------------------------------------------------------
+
+# Pure virtual function / Abstract method -> is a virtual function that does not contain the implementation, we only declare it. It is declared by assigning 0 to it. Move() method is one such function
+
+-------------------------------------------------------------------------------------
+# Abstract Classes and Pure Virtual function in C++ VS Java 
+	
+	-> In java, abstract keyword is used to create such classes and methods
+
+		//an abstract class in Java
+		abstract class Shape{
+			int color;
+
+			// an abstract function (like a pure virtual funct in C++)
+			abstract void draw();	
+		};
+
+	-> In C++, there is no keyword like abstract, virtual keyword is used to mark pure virtual functions(PVF), and if there is atleast one PVF, class becomes abstract
+
+		//an abstract class
+		class test{
+		public:
+			virtual void show() = 0;	
+		};
+
+-------------------------------------------------------------------------------------
+# Interface -> They are only in Java and not C++
+			-> It specifies What a Class must do, but now How it must be done
+			-> Like a class, an Interface can have methods and variables, but the methods declared in an interface are by default abstract
+			-> Variables are by default public, static and final
+			-> It is a way to achieve total Abstraction
+			-> It is used to achieve Multiple Inheritance in Java
+
+-------------------------------------------------------------------------------------
+# Virtual Function 
+	-> It is declared within a base class and is re-defined(Overriden) by a derived class.
+	-> When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class’s version of the function.				   
+	-> Used to achieve Runtime Polymorphism
+
+-------------------------------------------------------------------------------------
